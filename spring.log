@@ -1,0 +1,933 @@
+2018-10-09 10:17:46.550  INFO 5060 --- [main] com.zhxw.smbms.SmbmsApplication          : Starting SmbmsApplication on 2013-20140309JN with PID 5060 (C:\Users\Administrator\Desktop\smbms\target\classes started by Administrator in C:\Users\Administrator\Desktop\smbms)
+2018-10-09 10:17:46.557 DEBUG 5060 --- [main] com.zhxw.smbms.SmbmsApplication          : Running with Spring Boot v2.0.5.RELEASE, Spring v5.0.9.RELEASE
+2018-10-09 10:17:46.559  INFO 5060 --- [main] com.zhxw.smbms.SmbmsApplication          : No active profile set, falling back to default profiles: default
+2018-10-09 10:17:46.603  INFO 5060 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@93084c: startup date [Tue Oct 09 10:17:46 CST 2018]; root of context hierarchy
+2018-10-09 10:17:50.084  INFO 5060 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2018-10-09 10:17:50.113  INFO 5060 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-10-09 10:17:50.113  INFO 5060 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.34
+2018-10-09 10:17:50.116  INFO 5060 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_181\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Java\jdk1.8.0_181/bin;C:\Program Files\Java\jre1.8.0_181\bin;C:\apache-maven-3.5.4/bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\oraclexe\app\oracle\product\11.2.0\server\bin;;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Windows7Master;C:\Program Files\Microsoft\Web Platform Installer\;C:\Program Files\Microsoft ASP.NET\ASP.NET Web Pages\v1.0\;C:\Program Files\Windows Kits\8.0\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files\Microsoft SQL Server\100\DTS\Binn\;C:\Program Files\Microsoft SQL Server\100\Tools\Binn\VSShell\Common7\IDE\;C:\Program Files\Microsoft Visual Studio 9.0\Common7\IDE\PrivateAssemblies\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\ATI Technologies\ATI.ACE\Core-Static;.]
+2018-10-09 10:17:50.273  INFO 5060 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-10-09 10:17:50.384  INFO 5060 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2018-10-09 10:17:50.390  INFO 5060 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-10-09 10:17:50.391  INFO 5060 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-10-09 10:17:50.391  INFO 5060 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-10-09 10:17:50.391  INFO 5060 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-10-09 10:17:51.336  INFO 5060 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2018-10-09 10:17:51.496  INFO 5060 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-10-09 10:17:51.497  INFO 5060 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-10-09 10:17:51.502  INFO 5060 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-10-09 10:17:51.531  INFO 5060 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2018-10-09 10:17:51.535  INFO 5060 --- [main] com.zhxw.smbms.SmbmsApplication          : Started SmbmsApplication in 5.323 seconds (JVM running for 6.669)
+2018-10-09 10:18:57.109  INFO 5060 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-10-09 10:51:02.762 DEBUG 5060 --- [http-nio-8080-exec-2] c.zhxw.smbms.controller.UserController   : doLogin====================================
+2018-10-09 10:51:02.855  INFO 5060 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2018-10-09 10:51:03.436  INFO 5060 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2018-10-09 10:51:03.532 DEBUG 5060 --- [http-nio-8080-exec-2] c.z.smbms.dao.UserMapper.getLoginUser    : ==>  Preparing: SELECT * FROM smbms_user where userCode = ? 
+2018-10-09 10:51:03.561 DEBUG 5060 --- [http-nio-8080-exec-2] c.z.smbms.dao.UserMapper.getLoginUser    : ==> Parameters: liming(String)
+2018-10-09 10:51:03.678 DEBUG 5060 --- [http-nio-8080-exec-2] c.z.smbms.dao.UserMapper.getLoginUser    : <==      Total: 1
+2018-10-09 10:51:11.375 DEBUG 5060 --- [http-nio-8080-exec-8] c.zhxw.smbms.controller.UserController   : doLogin====================================
+2018-10-09 10:51:11.396 DEBUG 5060 --- [http-nio-8080-exec-8] c.z.smbms.dao.UserMapper.getLoginUser    : ==>  Preparing: SELECT * FROM smbms_user where userCode = ? 
+2018-10-09 10:51:11.398 DEBUG 5060 --- [http-nio-8080-exec-8] c.z.smbms.dao.UserMapper.getLoginUser    : ==> Parameters: liming(String)
+2018-10-09 10:51:11.402 DEBUG 5060 --- [http-nio-8080-exec-8] c.z.smbms.dao.UserMapper.getLoginUser    : <==      Total: 1
+2018-10-09 10:51:18.291 DEBUG 5060 --- [http-nio-8080-exec-6] c.z.smbms.controller.ProviderController  : getProviderView=============GET=======================
+2018-10-09 10:51:18.296 DEBUG 5060 --- [http-nio-8080-exec-6] c.z.s.d.ProviderMapper.getProviderCount  : ==>  Preparing: select count(1) from `smbms_provider` 
+2018-10-09 10:51:18.297 DEBUG 5060 --- [http-nio-8080-exec-6] c.z.s.d.ProviderMapper.getProviderCount  : ==> Parameters: 
+2018-10-09 10:51:18.312 DEBUG 5060 --- [http-nio-8080-exec-6] c.z.s.d.ProviderMapper.getProviderCount  : <==      Total: 1
+2018-10-09 10:51:18.318 DEBUG 5060 --- [http-nio-8080-exec-6] c.z.s.d.ProviderMapper.getProviderList   : ==>  Preparing: select * from `smbms_provider` LIMIT ?,? 
+2018-10-09 10:51:18.319 DEBUG 5060 --- [http-nio-8080-exec-6] c.z.s.d.ProviderMapper.getProviderList   : ==> Parameters: 0(Integer), 5(Integer)
+2018-10-09 10:51:18.330 DEBUG 5060 --- [http-nio-8080-exec-6] c.z.s.d.ProviderMapper.getProviderList   : <==      Total: 5
+2018-10-09 10:51:19.446 DEBUG 5060 --- [http-nio-8080-exec-2] c.z.smbms.dao.UserMapper.getUserCount    : ==>  Preparing: select count(1) from smbms_user 
+2018-10-09 10:51:19.448 DEBUG 5060 --- [http-nio-8080-exec-2] c.z.smbms.dao.UserMapper.getUserCount    : ==> Parameters: 
+2018-10-09 10:51:19.453 DEBUG 5060 --- [http-nio-8080-exec-2] c.z.smbms.dao.UserMapper.getUserCount    : <==      Total: 1
+2018-10-09 10:51:19.457 DEBUG 5060 --- [http-nio-8080-exec-2] c.z.smbms.dao.UserMapper.getUserCount    : ==>  Preparing: select count(1) from smbms_user 
+2018-10-09 10:51:19.457 DEBUG 5060 --- [http-nio-8080-exec-2] c.z.smbms.dao.UserMapper.getUserCount    : ==> Parameters: 
+2018-10-09 10:51:19.459 DEBUG 5060 --- [http-nio-8080-exec-2] c.z.smbms.dao.UserMapper.getUserCount    : <==      Total: 1
+2018-10-09 10:51:19.465 DEBUG 5060 --- [http-nio-8080-exec-2] c.zhxw.smbms.dao.UserMapper.getUserList  : ==>  Preparing: select *,TIMESTAMPDIFF(YEAR,`birthday`,NOW()) AS age from smbms_user where 1=1 LIMIT ?,? 
+2018-10-09 10:51:19.466 DEBUG 5060 --- [http-nio-8080-exec-2] c.zhxw.smbms.dao.UserMapper.getUserList  : ==> Parameters: 0(Integer), 5(Integer)
+2018-10-09 10:51:19.471 DEBUG 5060 --- [http-nio-8080-exec-2] c.zhxw.smbms.dao.UserMapper.getUserList  : <==      Total: 5
+2018-10-09 10:51:22.573 DEBUG 5060 --- [http-nio-8080-exec-7] c.zhxw.smbms.dao.UserMapper.getUserById  : ==>  Preparing: select * from `smbms_user` where id=? 
+2018-10-09 10:51:22.574 DEBUG 5060 --- [http-nio-8080-exec-7] c.zhxw.smbms.dao.UserMapper.getUserById  : ==> Parameters: 5(Integer)
+2018-10-09 10:51:22.578 DEBUG 5060 --- [http-nio-8080-exec-7] c.zhxw.smbms.dao.UserMapper.getUserById  : <==      Total: 1
+2018-10-09 10:52:06.281 DEBUG 5060 --- [http-nio-8080-exec-8] c.zhxw.smbms.controller.UserController   : doLogin====================================
+2018-10-09 10:52:06.284 DEBUG 5060 --- [http-nio-8080-exec-8] c.z.smbms.dao.UserMapper.getLoginUser    : ==>  Preparing: SELECT * FROM smbms_user where userCode = ? 
+2018-10-09 10:52:06.285 DEBUG 5060 --- [http-nio-8080-exec-8] c.z.smbms.dao.UserMapper.getLoginUser    : ==> Parameters: liming(String)
+2018-10-09 10:52:06.289 DEBUG 5060 --- [http-nio-8080-exec-8] c.z.smbms.dao.UserMapper.getLoginUser    : <==      Total: 1
+2018-10-09 10:52:07.971 DEBUG 5060 --- [http-nio-8080-exec-7] c.z.smbms.dao.UserMapper.getUserCount    : ==>  Preparing: select count(1) from smbms_user 
+2018-10-09 10:52:07.973 DEBUG 5060 --- [http-nio-8080-exec-7] c.z.smbms.dao.UserMapper.getUserCount    : ==> Parameters: 
+2018-10-09 10:52:07.974 DEBUG 5060 --- [http-nio-8080-exec-7] c.z.smbms.dao.UserMapper.getUserCount    : <==      Total: 1
+2018-10-09 10:52:07.978 DEBUG 5060 --- [http-nio-8080-exec-7] c.z.smbms.dao.UserMapper.getUserCount    : ==>  Preparing: select count(1) from smbms_user 
+2018-10-09 10:52:07.978 DEBUG 5060 --- [http-nio-8080-exec-7] c.z.smbms.dao.UserMapper.getUserCount    : ==> Parameters: 
+2018-10-09 10:52:07.981 DEBUG 5060 --- [http-nio-8080-exec-7] c.z.smbms.dao.UserMapper.getUserCount    : <==      Total: 1
+2018-10-09 10:52:07.983 DEBUG 5060 --- [http-nio-8080-exec-7] c.zhxw.smbms.dao.UserMapper.getUserList  : ==>  Preparing: select *,TIMESTAMPDIFF(YEAR,`birthday`,NOW()) AS age from smbms_user where 1=1 LIMIT ?,? 
+2018-10-09 10:52:07.984 DEBUG 5060 --- [http-nio-8080-exec-7] c.zhxw.smbms.dao.UserMapper.getUserList  : ==> Parameters: 0(Integer), 5(Integer)
+2018-10-09 10:52:07.989 DEBUG 5060 --- [http-nio-8080-exec-7] c.zhxw.smbms.dao.UserMapper.getUserList  : <==      Total: 5
+2018-10-09 10:52:09.206 DEBUG 5060 --- [http-nio-8080-exec-3] c.zhxw.smbms.dao.UserMapper.getUserById  : ==>  Preparing: select * from `smbms_user` where id=? 
+2018-10-09 10:52:09.208 DEBUG 5060 --- [http-nio-8080-exec-3] c.zhxw.smbms.dao.UserMapper.getUserById  : ==> Parameters: 5(Integer)
+2018-10-09 10:52:09.212 DEBUG 5060 --- [http-nio-8080-exec-3] c.zhxw.smbms.dao.UserMapper.getUserById  : <==      Total: 1
+2018-10-09 10:53:06.440  INFO 4188 --- [main] com.zhxw.smbms.SmbmsApplication          : Starting SmbmsApplication on 2013-20140309JN with PID 4188 (C:\Users\Administrator\Desktop\smbms\target\classes started by Administrator in C:\Users\Administrator\Desktop\smbms)
+2018-10-09 10:53:06.454 DEBUG 4188 --- [main] com.zhxw.smbms.SmbmsApplication          : Running with Spring Boot v2.0.5.RELEASE, Spring v5.0.9.RELEASE
+2018-10-09 10:53:06.456  INFO 4188 --- [main] com.zhxw.smbms.SmbmsApplication          : No active profile set, falling back to default profiles: default
+2018-10-09 10:53:06.842  INFO 4188 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@22f9e2: startup date [Tue Oct 09 10:53:06 CST 2018]; root of context hierarchy
+2018-10-09 10:53:09.171  INFO 4188 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2018-10-09 10:53:09.212  INFO 4188 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-10-09 10:53:09.213  INFO 4188 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.34
+2018-10-09 10:53:09.218  INFO 4188 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_181\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Java\jdk1.8.0_181/bin;C:\Program Files\Java\jre1.8.0_181\bin;C:\apache-maven-3.5.4/bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\oraclexe\app\oracle\product\11.2.0\server\bin;;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Windows7Master;C:\Program Files\Microsoft\Web Platform Installer\;C:\Program Files\Microsoft ASP.NET\ASP.NET Web Pages\v1.0\;C:\Program Files\Windows Kits\8.0\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files\Microsoft SQL Server\100\DTS\Binn\;C:\Program Files\Microsoft SQL Server\100\Tools\Binn\VSShell\Common7\IDE\;C:\Program Files\Microsoft Visual Studio 9.0\Common7\IDE\PrivateAssemblies\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\ATI Technologies\ATI.ACE\Core-Static;.]
+2018-10-09 10:53:09.372  INFO 4188 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-10-09 10:53:09.442  INFO 4188 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2018-10-09 10:53:09.446  INFO 4188 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-10-09 10:53:09.447  INFO 4188 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-10-09 10:53:09.447  INFO 4188 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-10-09 10:53:09.447  INFO 4188 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-10-09 10:53:10.709  INFO 4188 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2018-10-09 10:53:10.976  INFO 4188 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-10-09 10:53:10.978  INFO 4188 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-10-09 10:53:10.990  INFO 4188 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-10-09 10:53:11.030  INFO 4188 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2018-10-09 10:53:11.033  INFO 4188 --- [main] com.zhxw.smbms.SmbmsApplication          : Started SmbmsApplication in 5.322 seconds (JVM running for 7.603)
+2018-10-09 10:53:23.953  INFO 4188 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-10-09 10:53:31.557 DEBUG 4188 --- [http-nio-8080-exec-5] c.zhxw.smbms.controller.UserController   : doLogin====================================
+2018-10-09 10:53:31.563  INFO 4188 --- [http-nio-8080-exec-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2018-10-09 10:53:31.728  INFO 4188 --- [http-nio-8080-exec-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2018-10-09 10:53:31.771 DEBUG 4188 --- [http-nio-8080-exec-5] c.z.smbms.dao.UserMapper.getLoginUser    : ==>  Preparing: SELECT * FROM smbms_user where userCode = ? 
+2018-10-09 10:53:31.792 DEBUG 4188 --- [http-nio-8080-exec-5] c.z.smbms.dao.UserMapper.getLoginUser    : ==> Parameters: liming(String)
+2018-10-09 10:53:31.890 DEBUG 4188 --- [http-nio-8080-exec-5] c.z.smbms.dao.UserMapper.getLoginUser    : <==      Total: 1
+2018-10-09 10:53:33.034 DEBUG 4188 --- [http-nio-8080-exec-3] c.z.smbms.controller.ProviderController  : getProviderView=============GET=======================
+2018-10-09 10:53:33.037 DEBUG 4188 --- [http-nio-8080-exec-3] c.z.s.d.ProviderMapper.getProviderCount  : ==>  Preparing: select count(1) from `smbms_provider` 
+2018-10-09 10:53:33.037 DEBUG 4188 --- [http-nio-8080-exec-3] c.z.s.d.ProviderMapper.getProviderCount  : ==> Parameters: 
+2018-10-09 10:53:33.038 DEBUG 4188 --- [http-nio-8080-exec-3] c.z.s.d.ProviderMapper.getProviderCount  : <==      Total: 1
+2018-10-09 10:53:33.041 DEBUG 4188 --- [http-nio-8080-exec-3] c.z.s.d.ProviderMapper.getProviderList   : ==>  Preparing: select * from `smbms_provider` LIMIT ?,? 
+2018-10-09 10:53:33.041 DEBUG 4188 --- [http-nio-8080-exec-3] c.z.s.d.ProviderMapper.getProviderList   : ==> Parameters: 0(Integer), 5(Integer)
+2018-10-09 10:53:33.044 DEBUG 4188 --- [http-nio-8080-exec-3] c.z.s.d.ProviderMapper.getProviderList   : <==      Total: 5
+2018-10-09 10:53:33.781 DEBUG 4188 --- [http-nio-8080-exec-4] c.z.smbms.dao.UserMapper.getUserCount    : ==>  Preparing: select count(1) from smbms_user 
+2018-10-09 10:53:33.781 DEBUG 4188 --- [http-nio-8080-exec-4] c.z.smbms.dao.UserMapper.getUserCount    : ==> Parameters: 
+2018-10-09 10:53:33.781 DEBUG 4188 --- [http-nio-8080-exec-4] c.z.smbms.dao.UserMapper.getUserCount    : <==      Total: 1
+2018-10-09 10:53:33.782 DEBUG 4188 --- [http-nio-8080-exec-4] c.z.smbms.dao.UserMapper.getUserCount    : ==>  Preparing: select count(1) from smbms_user 
+2018-10-09 10:53:33.782 DEBUG 4188 --- [http-nio-8080-exec-4] c.z.smbms.dao.UserMapper.getUserCount    : ==> Parameters: 
+2018-10-09 10:53:33.783 DEBUG 4188 --- [http-nio-8080-exec-4] c.z.smbms.dao.UserMapper.getUserCount    : <==      Total: 1
+2018-10-09 10:53:33.784 DEBUG 4188 --- [http-nio-8080-exec-4] c.zhxw.smbms.dao.UserMapper.getUserList  : ==>  Preparing: select *,TIMESTAMPDIFF(YEAR,`birthday`,NOW()) AS age from smbms_user where 1=1 LIMIT ?,? 
+2018-10-09 10:53:33.785 DEBUG 4188 --- [http-nio-8080-exec-4] c.zhxw.smbms.dao.UserMapper.getUserList  : ==> Parameters: 0(Integer), 5(Integer)
+2018-10-09 10:53:33.788 DEBUG 4188 --- [http-nio-8080-exec-4] c.zhxw.smbms.dao.UserMapper.getUserList  : <==      Total: 5
+2018-10-09 10:53:34.550 DEBUG 4188 --- [http-nio-8080-exec-10] c.z.smbms.controller.ProviderController  : getProviderView=============GET=======================
+2018-10-09 10:53:34.551 DEBUG 4188 --- [http-nio-8080-exec-10] c.z.s.d.ProviderMapper.getProviderCount  : ==>  Preparing: select count(1) from `smbms_provider` 
+2018-10-09 10:53:34.551 DEBUG 4188 --- [http-nio-8080-exec-10] c.z.s.d.ProviderMapper.getProviderCount  : ==> Parameters: 
+2018-10-09 10:53:34.551 DEBUG 4188 --- [http-nio-8080-exec-10] c.z.s.d.ProviderMapper.getProviderCount  : <==      Total: 1
+2018-10-09 10:53:34.552 DEBUG 4188 --- [http-nio-8080-exec-10] c.z.s.d.ProviderMapper.getProviderList   : ==>  Preparing: select * from `smbms_provider` LIMIT ?,? 
+2018-10-09 10:53:34.553 DEBUG 4188 --- [http-nio-8080-exec-10] c.z.s.d.ProviderMapper.getProviderList   : ==> Parameters: 0(Integer), 5(Integer)
+2018-10-09 10:53:34.554 DEBUG 4188 --- [http-nio-8080-exec-10] c.z.s.d.ProviderMapper.getProviderList   : <==      Total: 5
+2018-10-09 10:53:37.736 DEBUG 4188 --- [http-nio-8080-exec-6] c.z.s.dao.ProviderMapper.getProvideById  : ==>  Preparing: select * from `smbms_provider` where id=? 
+2018-10-09 10:53:37.737 DEBUG 4188 --- [http-nio-8080-exec-6] c.z.s.dao.ProviderMapper.getProvideById  : ==> Parameters: 2(Integer)
+2018-10-09 10:53:37.738 DEBUG 4188 --- [http-nio-8080-exec-6] c.z.s.dao.ProviderMapper.getProvideById  : <==      Total: 1
+2018-10-09 10:53:40.529 DEBUG 4188 --- [http-nio-8080-exec-8] c.z.s.dao.ProviderMapper.getProvideById  : ==>  Preparing: select * from `smbms_provider` where id=? 
+2018-10-09 10:53:40.530 DEBUG 4188 --- [http-nio-8080-exec-8] c.z.s.dao.ProviderMapper.getProvideById  : ==> Parameters: 2(Integer)
+2018-10-09 10:53:40.531 DEBUG 4188 --- [http-nio-8080-exec-8] c.z.s.dao.ProviderMapper.getProvideById  : <==      Total: 1
+2018-10-09 10:53:51.481 DEBUG 4188 --- [http-nio-8080-exec-2] c.z.smbms.dao.ProviderMapper.proUpdate   : ==>  Preparing: update smbms_provider set proName=?, proContact=?, proPhone=?, proAddress=?, proFax=?, proDesc=? where id = ? 
+2018-10-09 10:53:51.481 DEBUG 4188 --- [http-nio-8080-exec-2] c.z.smbms.dao.ProviderMapper.proUpdate   : ==> Parameters: 石家庄帅益食品贸易有限公司(String), 张小文(String), 13309094212(String), 河北省石家庄新华区(String), 0311-67738876(String), 长期合作伙伴，主营产品:饮料、水饮料、植物蛋白饮料、休闲食品、果汁饮料、功能饮料等(String), 2(Long)
+2018-10-09 10:53:51.574 DEBUG 4188 --- [http-nio-8080-exec-2] c.z.smbms.dao.ProviderMapper.proUpdate   : <==    Updates: 1
+2018-10-09 10:53:51.706 DEBUG 4188 --- [http-nio-8080-exec-4] c.z.smbms.controller.ProviderController  : getProviderView=============GET=======================
+2018-10-09 10:53:51.708 DEBUG 4188 --- [http-nio-8080-exec-4] c.z.s.d.ProviderMapper.getProviderCount  : ==>  Preparing: select count(1) from `smbms_provider` WHERE proCode LIKE CONCAT('%',?,'%') and proName LIKE CONCAT('%',?,'%') 
+2018-10-09 10:53:51.710 DEBUG 4188 --- [http-nio-8080-exec-4] c.z.s.d.ProviderMapper.getProviderCount  : ==> Parameters: HB_GYS001(String), 石家庄帅益食品贸易有限公司(String)
+2018-10-09 10:53:51.728 DEBUG 4188 --- [http-nio-8080-exec-4] c.z.s.d.ProviderMapper.getProviderCount  : <==      Total: 1
+2018-10-09 10:53:51.729 DEBUG 4188 --- [http-nio-8080-exec-4] c.z.s.d.ProviderMapper.getProviderList   : ==>  Preparing: select * from `smbms_provider` WHERE proCode LIKE CONCAT('%',?,'%') and proName LIKE CONCAT('%',?,'%') LIMIT ?,? 
+2018-10-09 10:53:51.730 DEBUG 4188 --- [http-nio-8080-exec-4] c.z.s.d.ProviderMapper.getProviderList   : ==> Parameters: HB_GYS001(String), 石家庄帅益食品贸易有限公司(String), 0(Integer), 5(Integer)
+2018-10-09 10:53:51.731 DEBUG 4188 --- [http-nio-8080-exec-4] c.z.s.d.ProviderMapper.getProviderList   : <==      Total: 1
+2018-10-09 10:53:58.096 DEBUG 4188 --- [http-nio-8080-exec-6] c.z.smbms.dao.UserMapper.getUserCount    : ==>  Preparing: select count(1) from smbms_user 
+2018-10-09 10:53:58.097 DEBUG 4188 --- [http-nio-8080-exec-6] c.z.smbms.dao.UserMapper.getUserCount    : ==> Parameters: 
+2018-10-09 10:53:58.099 DEBUG 4188 --- [http-nio-8080-exec-6] c.z.smbms.dao.UserMapper.getUserCount    : <==      Total: 1
+2018-10-09 10:53:58.103 DEBUG 4188 --- [http-nio-8080-exec-6] c.z.smbms.dao.UserMapper.getUserCount    : ==>  Preparing: select count(1) from smbms_user 
+2018-10-09 10:53:58.104 DEBUG 4188 --- [http-nio-8080-exec-6] c.z.smbms.dao.UserMapper.getUserCount    : ==> Parameters: 
+2018-10-09 10:53:58.105 DEBUG 4188 --- [http-nio-8080-exec-6] c.z.smbms.dao.UserMapper.getUserCount    : <==      Total: 1
+2018-10-09 10:53:58.107 DEBUG 4188 --- [http-nio-8080-exec-6] c.zhxw.smbms.dao.UserMapper.getUserList  : ==>  Preparing: select *,TIMESTAMPDIFF(YEAR,`birthday`,NOW()) AS age from smbms_user where 1=1 LIMIT ?,? 
+2018-10-09 10:53:58.108 DEBUG 4188 --- [http-nio-8080-exec-6] c.zhxw.smbms.dao.UserMapper.getUserList  : ==> Parameters: 0(Integer), 5(Integer)
+2018-10-09 10:53:58.114 DEBUG 4188 --- [http-nio-8080-exec-6] c.zhxw.smbms.dao.UserMapper.getUserList  : <==      Total: 5
+2018-10-09 10:54:02.605 DEBUG 4188 --- [http-nio-8080-exec-3] c.z.smbms.dao.UserMapper.getUserCount    : ==>  Preparing: select count(1) from smbms_user WHERE userRole=? 
+2018-10-09 10:54:02.607 DEBUG 4188 --- [http-nio-8080-exec-3] c.z.smbms.dao.UserMapper.getUserCount    : ==> Parameters: 2(Integer)
+2018-10-09 10:54:02.610 DEBUG 4188 --- [http-nio-8080-exec-3] c.z.smbms.dao.UserMapper.getUserCount    : <==      Total: 1
+2018-10-09 10:54:02.613 DEBUG 4188 --- [http-nio-8080-exec-3] c.z.smbms.dao.UserMapper.getUserCount    : ==>  Preparing: select count(1) from smbms_user WHERE userRole=? 
+2018-10-09 10:54:02.614 DEBUG 4188 --- [http-nio-8080-exec-3] c.z.smbms.dao.UserMapper.getUserCount    : ==> Parameters: 2(Integer)
+2018-10-09 10:54:02.616 DEBUG 4188 --- [http-nio-8080-exec-3] c.z.smbms.dao.UserMapper.getUserCount    : <==      Total: 1
+2018-10-09 10:54:02.619 DEBUG 4188 --- [http-nio-8080-exec-3] c.zhxw.smbms.dao.UserMapper.getUserList  : ==>  Preparing: select *,TIMESTAMPDIFF(YEAR,`birthday`,NOW()) AS age from smbms_user where 1=1 and userRole = ? LIMIT ?,? 
+2018-10-09 10:54:02.620 DEBUG 4188 --- [http-nio-8080-exec-3] c.zhxw.smbms.dao.UserMapper.getUserList  : ==> Parameters: 2(Integer), 0(Integer), 5(Integer)
+2018-10-09 10:54:02.625 DEBUG 4188 --- [http-nio-8080-exec-3] c.zhxw.smbms.dao.UserMapper.getUserList  : <==      Total: 3
+2018-10-09 10:54:06.088 DEBUG 4188 --- [http-nio-8080-exec-7] c.zhxw.smbms.dao.UserMapper.getUserById  : ==>  Preparing: select * from `smbms_user` where id=? 
+2018-10-09 10:54:06.088 DEBUG 4188 --- [http-nio-8080-exec-7] c.zhxw.smbms.dao.UserMapper.getUserById  : ==> Parameters: 15(Integer)
+2018-10-09 10:54:06.091 DEBUG 4188 --- [http-nio-8080-exec-7] c.zhxw.smbms.dao.UserMapper.getUserById  : <==      Total: 1
+2018-10-09 11:01:08.573 DEBUG 4188 --- [http-nio-8080-exec-1] c.z.smbms.controller.ProviderController  : getProviderView=============GET=======================
+2018-10-09 11:01:08.575 DEBUG 4188 --- [http-nio-8080-exec-1] c.z.s.d.ProviderMapper.getProviderCount  : ==>  Preparing: select count(1) from `smbms_provider` 
+2018-10-09 11:01:08.576 DEBUG 4188 --- [http-nio-8080-exec-1] c.z.s.d.ProviderMapper.getProviderCount  : ==> Parameters: 
+2018-10-09 11:01:08.577 DEBUG 4188 --- [http-nio-8080-exec-1] c.z.s.d.ProviderMapper.getProviderCount  : <==      Total: 1
+2018-10-09 11:01:08.580 DEBUG 4188 --- [http-nio-8080-exec-1] c.z.s.d.ProviderMapper.getProviderList   : ==>  Preparing: select * from `smbms_provider` LIMIT ?,? 
+2018-10-09 11:01:08.581 DEBUG 4188 --- [http-nio-8080-exec-1] c.z.s.d.ProviderMapper.getProviderList   : ==> Parameters: 0(Integer), 5(Integer)
+2018-10-09 11:01:08.593 DEBUG 4188 --- [http-nio-8080-exec-1] c.z.s.d.ProviderMapper.getProviderList   : <==      Total: 5
+2018-10-09 11:01:10.961 DEBUG 4188 --- [http-nio-8080-exec-8] c.z.smbms.dao.UserMapper.getUserCount    : ==>  Preparing: select count(1) from smbms_user 
+2018-10-09 11:01:10.964 DEBUG 4188 --- [http-nio-8080-exec-8] c.z.smbms.dao.UserMapper.getUserCount    : ==> Parameters: 
+2018-10-09 11:01:10.966 DEBUG 4188 --- [http-nio-8080-exec-8] c.z.smbms.dao.UserMapper.getUserCount    : <==      Total: 1
+2018-10-09 11:01:10.969 DEBUG 4188 --- [http-nio-8080-exec-8] c.z.smbms.dao.UserMapper.getUserCount    : ==>  Preparing: select count(1) from smbms_user 
+2018-10-09 11:01:10.970 DEBUG 4188 --- [http-nio-8080-exec-8] c.z.smbms.dao.UserMapper.getUserCount    : ==> Parameters: 
+2018-10-09 11:01:10.971 DEBUG 4188 --- [http-nio-8080-exec-8] c.z.smbms.dao.UserMapper.getUserCount    : <==      Total: 1
+2018-10-09 11:01:10.974 DEBUG 4188 --- [http-nio-8080-exec-8] c.zhxw.smbms.dao.UserMapper.getUserList  : ==>  Preparing: select *,TIMESTAMPDIFF(YEAR,`birthday`,NOW()) AS age from smbms_user where 1=1 LIMIT ?,? 
+2018-10-09 11:01:10.975 DEBUG 4188 --- [http-nio-8080-exec-8] c.zhxw.smbms.dao.UserMapper.getUserList  : ==> Parameters: 0(Integer), 5(Integer)
+2018-10-09 11:01:10.985 DEBUG 4188 --- [http-nio-8080-exec-8] c.zhxw.smbms.dao.UserMapper.getUserList  : <==      Total: 5
+2018-10-09 11:01:19.704 DEBUG 4188 --- [http-nio-8080-exec-5] c.z.smbms.controller.ProviderController  : getProviderView=============GET=======================
+2018-10-09 11:01:19.707 DEBUG 4188 --- [http-nio-8080-exec-5] c.z.s.d.ProviderMapper.getProviderCount  : ==>  Preparing: select count(1) from `smbms_provider` 
+2018-10-09 11:01:19.707 DEBUG 4188 --- [http-nio-8080-exec-5] c.z.s.d.ProviderMapper.getProviderCount  : ==> Parameters: 
+2018-10-09 11:01:19.709 DEBUG 4188 --- [http-nio-8080-exec-5] c.z.s.d.ProviderMapper.getProviderCount  : <==      Total: 1
+2018-10-09 11:01:19.712 DEBUG 4188 --- [http-nio-8080-exec-5] c.z.s.d.ProviderMapper.getProviderList   : ==>  Preparing: select * from `smbms_provider` LIMIT ?,? 
+2018-10-09 11:01:19.713 DEBUG 4188 --- [http-nio-8080-exec-5] c.z.s.d.ProviderMapper.getProviderList   : ==> Parameters: 0(Integer), 5(Integer)
+2018-10-09 11:01:19.718 DEBUG 4188 --- [http-nio-8080-exec-5] c.z.s.d.ProviderMapper.getProviderList   : <==      Total: 5
+2018-10-09 11:01:19.822 ERROR 4188 --- [http-nio-8080-exec-5] org.thymeleaf.TemplateEngine             : [THYMELEAF][http-nio-8080-exec-5] Exception processing template "provider/providerManage": An error happened during template parsing (template: "class path resource [templates/provider/providerManage.html]")
+
+org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/provider/providerManage.html]")
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:241) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098) [thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072) [thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:354) [thymeleaf-spring5-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:187) [thymeleaf-spring5-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1325) [spring-webmvc-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1069) [spring-webmvc-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1008) [spring-webmvc-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:925) [spring-webmvc-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:974) [spring-webmvc-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:866) [spring-webmvc-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:851) [spring-webmvc-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52) [tomcat-embed-websocket-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) [spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:109) [spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93) [spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200) [spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:493) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:800) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:806) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1498) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_181]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_181]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_181]
+Caused by: org.attoparser.ParseException: Exception evaluating SpringEL expression: "session.SESSION_USER.getUsername()" (template: "common/header" - line 19, col 61)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:393) ~[attoparser-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257) ~[attoparser-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	... 52 common frames omitted
+Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Exception evaluating SpringEL expression: "session.SESSION_USER.getUsername()" (template: "common/header" - line 19, col 61)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:290) ~[thymeleaf-spring5-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.standard.expression.VariableExpression.executeVariableExpression(VariableExpression.java:165) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:66) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:126) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.engine.OpenElementTag.beHandled(OpenElementTag.java:205) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.engine.Model.process(Model.java:282) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1587) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleOpenElementEnd(TemplateHandlerAdapterMarkupHandler.java:304) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:278) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleOpenElementEnd(OutputExpressionInlinePreProcessorHandler.java:186) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:124) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.attoparser.HtmlElement.handleOpenElementEnd(HtmlElement.java:109) ~[attoparser-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.attoparser.HtmlMarkupHandler.handleOpenElementEnd(HtmlMarkupHandler.java:297) ~[attoparser-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.attoparser.MarkupEventProcessorHandler.handleOpenElementEnd(MarkupEventProcessorHandler.java:402) ~[attoparser-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:159) ~[attoparser-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710) ~[attoparser-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301) ~[attoparser-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	... 54 common frames omitted
+Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1011E: Method call: Attempted to call method getUsername() on null context object
+	at org.springframework.expression.spel.ast.MethodReference.throwIfNotNullSafe(MethodReference.java:153) ~[spring-expression-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.expression.spel.ast.MethodReference.getValueRef(MethodReference.java:82) ~[spring-expression-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueRef(CompoundExpression.java:67) ~[spring-expression-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:88) ~[spring-expression-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:111) ~[spring-expression-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:328) ~[spring-expression-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:263) ~[thymeleaf-spring5-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	... 76 common frames omitted
+
+2018-10-09 11:01:19.833 ERROR 4188 --- [http-nio-8080-exec-5] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/provider/providerManage.html]")] with root cause
+
+org.springframework.expression.spel.SpelEvaluationException: EL1011E: Method call: Attempted to call method getUsername() on null context object
+	at org.springframework.expression.spel.ast.MethodReference.throwIfNotNullSafe(MethodReference.java:153) ~[spring-expression-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.expression.spel.ast.MethodReference.getValueRef(MethodReference.java:82) ~[spring-expression-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueRef(CompoundExpression.java:67) ~[spring-expression-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:88) ~[spring-expression-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:111) ~[spring-expression-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:328) ~[spring-expression-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:263) ~[thymeleaf-spring5-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.standard.expression.VariableExpression.executeVariableExpression(VariableExpression.java:165) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:66) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:126) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.engine.OpenElementTag.beHandled(OpenElementTag.java:205) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.engine.Model.process(Model.java:282) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1587) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleOpenElementEnd(TemplateHandlerAdapterMarkupHandler.java:304) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:278) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleOpenElementEnd(OutputExpressionInlinePreProcessorHandler.java:186) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:124) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.attoparser.HtmlElement.handleOpenElementEnd(HtmlElement.java:109) ~[attoparser-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.attoparser.HtmlMarkupHandler.handleOpenElementEnd(HtmlMarkupHandler.java:297) ~[attoparser-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.attoparser.MarkupEventProcessorHandler.handleOpenElementEnd(MarkupEventProcessorHandler.java:402) ~[attoparser-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:159) ~[attoparser-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710) ~[attoparser-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301) ~[attoparser-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257) ~[attoparser-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:354) ~[thymeleaf-spring5-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:187) ~[thymeleaf-spring5-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1325) ~[spring-webmvc-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1069) ~[spring-webmvc-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1008) ~[spring-webmvc-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:925) ~[spring-webmvc-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:974) ~[spring-webmvc-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:866) ~[spring-webmvc-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635) ~[tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:851) ~[spring-webmvc-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742) ~[tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52) ~[tomcat-embed-websocket-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) ~[spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:109) ~[spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93) ~[spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200) ~[spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198) ~[tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:493) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:800) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:806) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1498) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_181]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_181]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_181]
+
+2018-10-09 11:01:24.008 DEBUG 4188 --- [http-nio-8080-exec-9] c.z.smbms.dao.UserMapper.getUserCount    : ==>  Preparing: select count(1) from smbms_user 
+2018-10-09 11:01:24.009 DEBUG 4188 --- [http-nio-8080-exec-9] c.z.smbms.dao.UserMapper.getUserCount    : ==> Parameters: 
+2018-10-09 11:01:24.011 DEBUG 4188 --- [http-nio-8080-exec-9] c.z.smbms.dao.UserMapper.getUserCount    : <==      Total: 1
+2018-10-09 11:01:24.014 DEBUG 4188 --- [http-nio-8080-exec-9] c.z.smbms.dao.UserMapper.getUserCount    : ==>  Preparing: select count(1) from smbms_user 
+2018-10-09 11:01:24.015 DEBUG 4188 --- [http-nio-8080-exec-9] c.z.smbms.dao.UserMapper.getUserCount    : ==> Parameters: 
+2018-10-09 11:01:24.016 DEBUG 4188 --- [http-nio-8080-exec-9] c.z.smbms.dao.UserMapper.getUserCount    : <==      Total: 1
+2018-10-09 11:01:24.020 DEBUG 4188 --- [http-nio-8080-exec-9] c.zhxw.smbms.dao.UserMapper.getUserList  : ==>  Preparing: select *,TIMESTAMPDIFF(YEAR,`birthday`,NOW()) AS age from smbms_user where 1=1 LIMIT ?,? 
+2018-10-09 11:01:24.021 DEBUG 4188 --- [http-nio-8080-exec-9] c.zhxw.smbms.dao.UserMapper.getUserList  : ==> Parameters: 0(Integer), 5(Integer)
+2018-10-09 11:01:24.025 DEBUG 4188 --- [http-nio-8080-exec-9] c.zhxw.smbms.dao.UserMapper.getUserList  : <==      Total: 5
+2018-10-09 11:01:24.031 ERROR 4188 --- [http-nio-8080-exec-9] org.thymeleaf.TemplateEngine             : [THYMELEAF][http-nio-8080-exec-9] Exception processing template "user/userManage": An error happened during template parsing (template: "class path resource [templates/user/userManage.html]")
+
+org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/user/userManage.html]")
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:241) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098) [thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072) [thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:354) [thymeleaf-spring5-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:187) [thymeleaf-spring5-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1325) [spring-webmvc-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1069) [spring-webmvc-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1008) [spring-webmvc-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:925) [spring-webmvc-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:974) [spring-webmvc-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:866) [spring-webmvc-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:851) [spring-webmvc-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52) [tomcat-embed-websocket-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) [spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:109) [spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93) [spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200) [spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:493) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:800) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:806) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1498) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_181]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_181]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_181]
+Caused by: org.attoparser.ParseException: Exception evaluating SpringEL expression: "session.SESSION_USER.getUsername()" (template: "common/header" - line 19, col 61)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:393) ~[attoparser-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257) ~[attoparser-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	... 52 common frames omitted
+Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Exception evaluating SpringEL expression: "session.SESSION_USER.getUsername()" (template: "common/header" - line 19, col 61)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:290) ~[thymeleaf-spring5-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.standard.expression.VariableExpression.executeVariableExpression(VariableExpression.java:165) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:66) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:126) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.engine.OpenElementTag.beHandled(OpenElementTag.java:205) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.engine.Model.process(Model.java:282) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1587) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleOpenElementEnd(TemplateHandlerAdapterMarkupHandler.java:304) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:278) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleOpenElementEnd(OutputExpressionInlinePreProcessorHandler.java:186) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:124) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.attoparser.HtmlElement.handleOpenElementEnd(HtmlElement.java:109) ~[attoparser-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.attoparser.HtmlMarkupHandler.handleOpenElementEnd(HtmlMarkupHandler.java:297) ~[attoparser-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.attoparser.MarkupEventProcessorHandler.handleOpenElementEnd(MarkupEventProcessorHandler.java:402) ~[attoparser-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:159) ~[attoparser-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710) ~[attoparser-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301) ~[attoparser-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	... 54 common frames omitted
+Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1011E: Method call: Attempted to call method getUsername() on null context object
+	at org.springframework.expression.spel.ast.MethodReference.throwIfNotNullSafe(MethodReference.java:153) ~[spring-expression-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.expression.spel.ast.MethodReference.getValueRef(MethodReference.java:82) ~[spring-expression-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueRef(CompoundExpression.java:67) ~[spring-expression-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:88) ~[spring-expression-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:111) ~[spring-expression-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:328) ~[spring-expression-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:263) ~[thymeleaf-spring5-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	... 76 common frames omitted
+
+2018-10-09 11:01:24.042 ERROR 4188 --- [http-nio-8080-exec-9] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/user/userManage.html]")] with root cause
+
+org.springframework.expression.spel.SpelEvaluationException: EL1011E: Method call: Attempted to call method getUsername() on null context object
+	at org.springframework.expression.spel.ast.MethodReference.throwIfNotNullSafe(MethodReference.java:153) ~[spring-expression-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.expression.spel.ast.MethodReference.getValueRef(MethodReference.java:82) ~[spring-expression-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueRef(CompoundExpression.java:67) ~[spring-expression-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:88) ~[spring-expression-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:111) ~[spring-expression-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:328) ~[spring-expression-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:263) ~[thymeleaf-spring5-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.standard.expression.VariableExpression.executeVariableExpression(VariableExpression.java:165) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:66) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:126) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.engine.OpenElementTag.beHandled(OpenElementTag.java:205) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.engine.Model.process(Model.java:282) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1587) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleOpenElementEnd(TemplateHandlerAdapterMarkupHandler.java:304) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:278) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleOpenElementEnd(OutputExpressionInlinePreProcessorHandler.java:186) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:124) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.attoparser.HtmlElement.handleOpenElementEnd(HtmlElement.java:109) ~[attoparser-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.attoparser.HtmlMarkupHandler.handleOpenElementEnd(HtmlMarkupHandler.java:297) ~[attoparser-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.attoparser.MarkupEventProcessorHandler.handleOpenElementEnd(MarkupEventProcessorHandler.java:402) ~[attoparser-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:159) ~[attoparser-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710) ~[attoparser-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301) ~[attoparser-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257) ~[attoparser-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:354) ~[thymeleaf-spring5-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:187) ~[thymeleaf-spring5-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1325) ~[spring-webmvc-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1069) ~[spring-webmvc-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1008) ~[spring-webmvc-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:925) ~[spring-webmvc-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:974) ~[spring-webmvc-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:866) ~[spring-webmvc-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635) ~[tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:851) ~[spring-webmvc-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742) ~[tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52) ~[tomcat-embed-websocket-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) ~[spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:109) ~[spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93) ~[spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200) ~[spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198) ~[tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:493) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:800) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:806) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1498) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_181]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_181]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_181]
+
+2018-10-09 11:01:28.608 DEBUG 4188 --- [http-nio-8080-exec-6] c.z.smbms.dao.UserMapper.getUserCount    : ==>  Preparing: select count(1) from smbms_user 
+2018-10-09 11:01:28.609 DEBUG 4188 --- [http-nio-8080-exec-6] c.z.smbms.dao.UserMapper.getUserCount    : ==> Parameters: 
+2018-10-09 11:01:28.611 DEBUG 4188 --- [http-nio-8080-exec-6] c.z.smbms.dao.UserMapper.getUserCount    : <==      Total: 1
+2018-10-09 11:01:28.613 DEBUG 4188 --- [http-nio-8080-exec-6] c.z.smbms.dao.UserMapper.getUserCount    : ==>  Preparing: select count(1) from smbms_user 
+2018-10-09 11:01:28.614 DEBUG 4188 --- [http-nio-8080-exec-6] c.z.smbms.dao.UserMapper.getUserCount    : ==> Parameters: 
+2018-10-09 11:01:28.615 DEBUG 4188 --- [http-nio-8080-exec-6] c.z.smbms.dao.UserMapper.getUserCount    : <==      Total: 1
+2018-10-09 11:01:28.617 DEBUG 4188 --- [http-nio-8080-exec-6] c.zhxw.smbms.dao.UserMapper.getUserList  : ==>  Preparing: select *,TIMESTAMPDIFF(YEAR,`birthday`,NOW()) AS age from smbms_user where 1=1 LIMIT ?,? 
+2018-10-09 11:01:28.618 DEBUG 4188 --- [http-nio-8080-exec-6] c.zhxw.smbms.dao.UserMapper.getUserList  : ==> Parameters: 0(Integer), 5(Integer)
+2018-10-09 11:01:28.622 DEBUG 4188 --- [http-nio-8080-exec-6] c.zhxw.smbms.dao.UserMapper.getUserList  : <==      Total: 5
+2018-10-09 11:01:28.633 ERROR 4188 --- [http-nio-8080-exec-6] org.thymeleaf.TemplateEngine             : [THYMELEAF][http-nio-8080-exec-6] Exception processing template "user/userManage": An error happened during template parsing (template: "class path resource [templates/user/userManage.html]")
+
+org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/user/userManage.html]")
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:241) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098) [thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072) [thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:354) [thymeleaf-spring5-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:187) [thymeleaf-spring5-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1325) [spring-webmvc-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1069) [spring-webmvc-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1008) [spring-webmvc-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:925) [spring-webmvc-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:974) [spring-webmvc-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:866) [spring-webmvc-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:851) [spring-webmvc-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52) [tomcat-embed-websocket-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) [spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:109) [spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93) [spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200) [spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:493) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:800) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:806) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1498) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_181]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_181]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_181]
+Caused by: org.attoparser.ParseException: Exception evaluating SpringEL expression: "session.SESSION_USER.getUsername()" (template: "common/header" - line 19, col 61)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:393) ~[attoparser-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257) ~[attoparser-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	... 52 common frames omitted
+Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Exception evaluating SpringEL expression: "session.SESSION_USER.getUsername()" (template: "common/header" - line 19, col 61)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:290) ~[thymeleaf-spring5-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.standard.expression.VariableExpression.executeVariableExpression(VariableExpression.java:165) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:66) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:126) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.engine.OpenElementTag.beHandled(OpenElementTag.java:205) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.engine.Model.process(Model.java:282) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1587) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleOpenElementEnd(TemplateHandlerAdapterMarkupHandler.java:304) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:278) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleOpenElementEnd(OutputExpressionInlinePreProcessorHandler.java:186) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:124) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.attoparser.HtmlElement.handleOpenElementEnd(HtmlElement.java:109) ~[attoparser-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.attoparser.HtmlMarkupHandler.handleOpenElementEnd(HtmlMarkupHandler.java:297) ~[attoparser-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.attoparser.MarkupEventProcessorHandler.handleOpenElementEnd(MarkupEventProcessorHandler.java:402) ~[attoparser-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:159) ~[attoparser-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710) ~[attoparser-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301) ~[attoparser-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	... 54 common frames omitted
+Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1011E: Method call: Attempted to call method getUsername() on null context object
+	at org.springframework.expression.spel.ast.MethodReference.throwIfNotNullSafe(MethodReference.java:153) ~[spring-expression-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.expression.spel.ast.MethodReference.getValueRef(MethodReference.java:82) ~[spring-expression-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueRef(CompoundExpression.java:67) ~[spring-expression-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:88) ~[spring-expression-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:111) ~[spring-expression-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:328) ~[spring-expression-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:263) ~[thymeleaf-spring5-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	... 76 common frames omitted
+
+2018-10-09 11:01:28.636 ERROR 4188 --- [http-nio-8080-exec-6] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/user/userManage.html]")] with root cause
+
+org.springframework.expression.spel.SpelEvaluationException: EL1011E: Method call: Attempted to call method getUsername() on null context object
+	at org.springframework.expression.spel.ast.MethodReference.throwIfNotNullSafe(MethodReference.java:153) ~[spring-expression-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.expression.spel.ast.MethodReference.getValueRef(MethodReference.java:82) ~[spring-expression-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueRef(CompoundExpression.java:67) ~[spring-expression-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:88) ~[spring-expression-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:111) ~[spring-expression-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:328) ~[spring-expression-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:263) ~[thymeleaf-spring5-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.standard.expression.VariableExpression.executeVariableExpression(VariableExpression.java:165) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:66) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:126) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.engine.OpenElementTag.beHandled(OpenElementTag.java:205) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.engine.Model.process(Model.java:282) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1587) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleOpenElementEnd(TemplateHandlerAdapterMarkupHandler.java:304) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:278) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleOpenElementEnd(OutputExpressionInlinePreProcessorHandler.java:186) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:124) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.attoparser.HtmlElement.handleOpenElementEnd(HtmlElement.java:109) ~[attoparser-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.attoparser.HtmlMarkupHandler.handleOpenElementEnd(HtmlMarkupHandler.java:297) ~[attoparser-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.attoparser.MarkupEventProcessorHandler.handleOpenElementEnd(MarkupEventProcessorHandler.java:402) ~[attoparser-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:159) ~[attoparser-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710) ~[attoparser-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301) ~[attoparser-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257) ~[attoparser-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:354) ~[thymeleaf-spring5-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:187) ~[thymeleaf-spring5-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1325) ~[spring-webmvc-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1069) ~[spring-webmvc-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1008) ~[spring-webmvc-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:925) ~[spring-webmvc-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:974) ~[spring-webmvc-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:866) ~[spring-webmvc-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635) ~[tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:851) ~[spring-webmvc-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742) ~[tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52) ~[tomcat-embed-websocket-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) ~[spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:109) ~[spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93) ~[spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200) ~[spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198) ~[tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:493) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:800) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:806) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1498) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_181]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_181]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_181]
+
+2018-10-09 11:01:38.477 DEBUG 4188 --- [http-nio-8080-exec-10] c.z.smbms.controller.ProviderController  : getProviderView=============GET=======================
+2018-10-09 11:01:38.479 DEBUG 4188 --- [http-nio-8080-exec-10] c.z.s.d.ProviderMapper.getProviderCount  : ==>  Preparing: select count(1) from `smbms_provider` 
+2018-10-09 11:01:38.480 DEBUG 4188 --- [http-nio-8080-exec-10] c.z.s.d.ProviderMapper.getProviderCount  : ==> Parameters: 
+2018-10-09 11:01:38.482 DEBUG 4188 --- [http-nio-8080-exec-10] c.z.s.d.ProviderMapper.getProviderCount  : <==      Total: 1
+2018-10-09 11:01:38.485 DEBUG 4188 --- [http-nio-8080-exec-10] c.z.s.d.ProviderMapper.getProviderList   : ==>  Preparing: select * from `smbms_provider` LIMIT ?,? 
+2018-10-09 11:01:38.486 DEBUG 4188 --- [http-nio-8080-exec-10] c.z.s.d.ProviderMapper.getProviderList   : ==> Parameters: 0(Integer), 5(Integer)
+2018-10-09 11:01:38.491 DEBUG 4188 --- [http-nio-8080-exec-10] c.z.s.d.ProviderMapper.getProviderList   : <==      Total: 5
+2018-10-09 11:01:38.508 ERROR 4188 --- [http-nio-8080-exec-10] org.thymeleaf.TemplateEngine             : [THYMELEAF][http-nio-8080-exec-10] Exception processing template "provider/providerManage": An error happened during template parsing (template: "class path resource [templates/provider/providerManage.html]")
+
+org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/provider/providerManage.html]")
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:241) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098) [thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072) [thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:354) [thymeleaf-spring5-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:187) [thymeleaf-spring5-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1325) [spring-webmvc-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1069) [spring-webmvc-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1008) [spring-webmvc-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:925) [spring-webmvc-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:974) [spring-webmvc-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:866) [spring-webmvc-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:851) [spring-webmvc-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52) [tomcat-embed-websocket-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) [spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:109) [spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93) [spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200) [spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:493) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:800) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:806) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1498) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_181]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_181]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_181]
+Caused by: org.attoparser.ParseException: Exception evaluating SpringEL expression: "session.SESSION_USER.getUsername()" (template: "common/header" - line 19, col 61)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:393) ~[attoparser-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257) ~[attoparser-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	... 52 common frames omitted
+Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Exception evaluating SpringEL expression: "session.SESSION_USER.getUsername()" (template: "common/header" - line 19, col 61)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:290) ~[thymeleaf-spring5-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.standard.expression.VariableExpression.executeVariableExpression(VariableExpression.java:165) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:66) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:126) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.engine.OpenElementTag.beHandled(OpenElementTag.java:205) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.engine.Model.process(Model.java:282) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1587) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleOpenElementEnd(TemplateHandlerAdapterMarkupHandler.java:304) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:278) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleOpenElementEnd(OutputExpressionInlinePreProcessorHandler.java:186) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:124) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.attoparser.HtmlElement.handleOpenElementEnd(HtmlElement.java:109) ~[attoparser-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.attoparser.HtmlMarkupHandler.handleOpenElementEnd(HtmlMarkupHandler.java:297) ~[attoparser-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.attoparser.MarkupEventProcessorHandler.handleOpenElementEnd(MarkupEventProcessorHandler.java:402) ~[attoparser-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:159) ~[attoparser-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710) ~[attoparser-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301) ~[attoparser-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	... 54 common frames omitted
+Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1011E: Method call: Attempted to call method getUsername() on null context object
+	at org.springframework.expression.spel.ast.MethodReference.throwIfNotNullSafe(MethodReference.java:153) ~[spring-expression-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.expression.spel.ast.MethodReference.getValueRef(MethodReference.java:82) ~[spring-expression-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueRef(CompoundExpression.java:67) ~[spring-expression-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:88) ~[spring-expression-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:111) ~[spring-expression-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:328) ~[spring-expression-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:263) ~[thymeleaf-spring5-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	... 76 common frames omitted
+
+2018-10-09 11:01:38.521 ERROR 4188 --- [http-nio-8080-exec-10] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/provider/providerManage.html]")] with root cause
+
+org.springframework.expression.spel.SpelEvaluationException: EL1011E: Method call: Attempted to call method getUsername() on null context object
+	at org.springframework.expression.spel.ast.MethodReference.throwIfNotNullSafe(MethodReference.java:153) ~[spring-expression-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.expression.spel.ast.MethodReference.getValueRef(MethodReference.java:82) ~[spring-expression-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueRef(CompoundExpression.java:67) ~[spring-expression-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:88) ~[spring-expression-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:111) ~[spring-expression-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:328) ~[spring-expression-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:263) ~[thymeleaf-spring5-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.standard.expression.VariableExpression.executeVariableExpression(VariableExpression.java:165) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:66) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:126) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.engine.OpenElementTag.beHandled(OpenElementTag.java:205) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.engine.Model.process(Model.java:282) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1587) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleOpenElementEnd(TemplateHandlerAdapterMarkupHandler.java:304) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:278) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleOpenElementEnd(OutputExpressionInlinePreProcessorHandler.java:186) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:124) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.attoparser.HtmlElement.handleOpenElementEnd(HtmlElement.java:109) ~[attoparser-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.attoparser.HtmlMarkupHandler.handleOpenElementEnd(HtmlMarkupHandler.java:297) ~[attoparser-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.attoparser.MarkupEventProcessorHandler.handleOpenElementEnd(MarkupEventProcessorHandler.java:402) ~[attoparser-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:159) ~[attoparser-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710) ~[attoparser-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301) ~[attoparser-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257) ~[attoparser-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:354) ~[thymeleaf-spring5-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:187) ~[thymeleaf-spring5-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1325) ~[spring-webmvc-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1069) ~[spring-webmvc-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1008) ~[spring-webmvc-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:925) ~[spring-webmvc-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:974) ~[spring-webmvc-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:866) ~[spring-webmvc-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635) ~[tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:851) ~[spring-webmvc-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742) ~[tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52) ~[tomcat-embed-websocket-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) ~[spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:109) ~[spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93) ~[spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200) ~[spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198) ~[tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:493) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:800) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:806) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1498) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_181]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_181]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_181]
+

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<div th:replace="common/header::html"></div>
+<input type="hidden" id="path" name="path" value="/SMBMS"/>
+<input type="hidden" id="referer" name="referer" value="http://localhost:8080jsp/bill.do?method=query"/>
+
+<div class="right">
+    <div class="location">
+        <strong>你现在所在的位置是:</strong>
+        <span>供应商管理页面</span>
+    </div>
+    <div class="search">
+        <form method="get" th:action="@{/pro/getProviderView}">
+            <input name="method" value="query" type="hidden">
+            <span>供应商编码：</span>
+            <input name="queryProCode" type="text" value="" th:value="${proCode}">
+
+            <span>供应商名称：</span>
+            <input name="queryProName" type="text" value="" th:value="${proName}">
+
+            <input value="查 询" type="submit" id="searchbutton">
+            <a href="/pro/getProAdd">添加供应商</a>
+        </form>
+    </div>
+    <!--供应商操作表格-->
+    <table class="providerTable" cellpadding="0" cellspacing="0">
+        <tr class="firstTr">
+            <th width="10%">供应商编码</th>
+            <th width="20%">供应商名称</th>
+            <th width="10%">联系人</th>
+            <th width="10%">联系电话</th>
+            <th width="10%">传真</th>
+            <th width="10%">创建时间</th>
+            <th width="30%">操作</th>
+        </tr>
+        <tr th:each="prolist:${providerList}">
+            <td>
+                <span th:text="${prolist.procode}">ZJ_GYS002</span>
+            </td>
+            <td>
+                <span th:text="${prolist.proname}">乐摆日用品厂</span>
+            </td>
+            <td>
+                <span th:text="${prolist.procontact}">王世杰</span>
+            </td>
+            <td>
+                <span th:text="${prolist.prophone}">13212331567</span>
+            </td>
+            <td>
+                <span th:text="${prolist.profax}">0579-34452321</span>
+            </td>
+            <td>
+					<span th:text="${#dates.format(prolist.creationdate,'yyyy-MM-dd HH:mm:ss')}">
+					2016-08-22
+					</span>
+            </td>
+            <td>
+                <span><a class="viewProvider" href="/pro/getProSee" th:href="@{/pro/getProSee(proId=${prolist.id})}"
+                         proid=15 proname=乐摆日用品厂><img
+                        th:src="@{/images/read.png}"
+                        alt="查看" title="查看"/></a></span>
+                <span><a class="modifyProvider" href="javascript:;"
+                         th:href="@{/pro/getProUpdate(proId=${prolist.id},currPageNo=${page.currPageNo},queryProCode=${prolist.procode},queryProName=${prolist.proname})}"
+                         proid=15 proname=乐摆日用品厂><img
+                        th:src="@{/images/xiugai.png}"
+                        alt="修改"
+                        title="修改"/></a></span>
+                <span><a class="deleteProvider" href="javascript:;" proid=15 proname=乐摆日用品厂>
+                    <input type="hidden" class="deleteProId" th:value="${prolist.id}" value="${prolist.id}">
+                    <input type="hidden" class="deleteproName" th:value="${prolist.proname}"
+                           value="${prolist.proName}">
+                    <img th:src="@{/images/schu.png}" alt="删除" title="删除"/></a></span>
+            </td>
+        </tr>
+
+    </table>
+    <!-- 分页查询  -->
+    <div class="page-bar" id="lay_page" align="center"></div>
+    <!-- 无数据提示  -->
+    <h1 align="center">[[${providerList_Null}]]</h1>
+</div>
+</section>
+<div th:replace="common/bottom::html"></div>
+
+</body>
+</html>
+

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhxw.smbms.dao.ProviderMapper">
+
+    <!--查询供应商集合 -->
+    <select id="getProviderList" resultType="Smbms_Provider">
+        select * from `smbms_provider`
+        <where>
+            <if test="proCode!=''">and proCode LIKE CONCAT('%',#{proCode},'%')</if>
+            <if test="proName!=''">and proName LIKE CONCAT('%',#{proName},'%')</if>
+        </where>
+        LIMIT #{currPageNo},#{pageSize}
+    </select>
+
+    <!--查询供应商总数 -->
+    <select id="getProviderCount" resultType="int">
+        select count(1) from `smbms_provider`
+        <where>
+            <if test="proCode!=''and proCode!=null">and proCode LIKE CONCAT('%',#{proCode},'%')</if>
+            <if test="proName!=''and proName!=null">and proName LIKE CONCAT('%',#{proName},'%')</if>
+        </where>
+    </select>
+
+    <!--查询供应商名称 -->
+    <select id="getProviderName" resultType="Smbms_Provider">
+		select id,proName from
+		`smbms_provider`
+	</select>
+
+    <!--查看供应商  -->
+    <select id="getProvideById" resultType="Smbms_Provider">
+	select * from `smbms_provider` where id=#{id}
+	</select>
+
+    <!--修改供应商  -->
+    <update id="proUpdate" parameterType="Smbms_Provider">
+        update smbms_provider
+        <trim prefix="set" suffixOverrides="," suffix="where id = #{id}">
+            <if test="proname != null">proName=#{proname},</if>
+            <if test="procontact != null">proContact=#{procontact},</if>
+            <if test="prophone != null">proPhone=#{prophone},</if>
+            <if test="proaddress != null">proAddress=#{proaddress},</if>
+            <if test="profax != null">proFax=#{profax},</if>
+            <if test="prodesc != null">proDesc=#{prodesc}</if>
+        </trim>
+    </update>
+
+    <!-- 删除供应商  -->
+    <delete id="proDelete">
+	 delete from smbms_provider where id=#{proId}
+	</delete>
+</mapper>

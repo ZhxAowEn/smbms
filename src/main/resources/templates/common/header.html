@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>超市订单管理系统</title>
+    <link type="text/css" rel="stylesheet" href="css/style.css" th:href="@{/css/style.css}"/>
+    <link type="text/css" rel="stylesheet" href="css/public.css" th:href="@{/css/public.css}"/>
+    <script type="text/javascript" src="/js/time.js" th:src="@{/js/time.js}"></script>
+    <script type="text/javascript" src="/js/jquery-1.12.4.js" th:src="@{/js/jquery-1.12.4.js}"></script>
+    <script type="text/javascript" src="/js/common.js" th:src="@{/js/common.js}"></script>
+    <script type="text/javascript" src="/statics/calendar/WdatePicker.js"
+            th:src="@{/statics/calendar/WdatePicker.js}"></script>
+</head>
+<body>
+<!--头部-->
+<header class="publicHeader">
+    <h1>超市订单管理系统</h1>
+    <div class="publicHeaderR">
+        <p><span>亲爱的管理员：</span><span style="color: #fff21b" th:text="${session.SESSION_USER.getUsername()}"></span> ,
+            欢迎你！</p>
+        <a href="/user/logout">退出</a>
+    </div>
+</header>
+<!--时间-->
+<section class="publicTime">
+    <span id="time"
+          th:text="${#dates.format(new java.util.Date().getTime(), 'yyyy-MM-dd HH')}">2015年1月1日 11:11  星期一</span>
+</section>
+<!--主体内容-->
+<section class="publicMian ">
+    <div class="left">
+        <h2 class="leftH2"><span class="span1"></span>功能列表 <span></span></h2>
+        <nav>
+            <ul class="list">
+                <li><a href="bill/billManage.html">订单管理</a></li>
+                <li><a href="getProviderView" th:href="@{/pro/getProviderView}">供应商管理</a></li>
+                <li><a href="#" th:href="@{/user/userManage}">用户管理</a></li>
+                <li><a href="/user/updatePwd.html" th:href="@{/user/getUserUpdatePwd}">密码修改</a></li>
+                <li><a href="/user/logout">退出系统</a></li>
+            </ul>
+        </nav>
+    </div>
+</body>
+</html>

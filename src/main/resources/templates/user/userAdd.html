@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<div th:replace="common/header::html"></div>
+<script type="text/javascript">
+    $(function () {
+        $("#add").click(function () {
+            var userCode = $("#userCode").val();
+            var userName = $("#userName").val();
+            var userPassword = $("#userPassword").val();
+            var ruserPassword = $("#ruserPassword").val();
+            var birthday = $("#birthday").val();
+            var phone = $("#phone").val();
+            var address = $("#address").val();
+            if (userCode == "" || (/^[a-zA-Z]{5,20}$/.test(userCode) == false)) {
+                $("#userCode").focus();
+                $("#userCode").next().html("* 请输入5-20位用户编码（字母）");
+            } else if (userName == "" || (/^[\u4E00-\u9FA5,a-zA-Z]{2,10}$/.test(userName) == false)) {
+                $("#userCode").next().html("");
+                $("#userName").focus();
+                $("#userName").next().html("* 请输入2-10位用户姓名（汉字、字母）");
+            } else if (userPassword == "" || (/^(\w){7,20}$/.test(userPassword) == false)) {
+                $("#userName").next().html("");
+                $("#userPassword").focus();
+                $("#userPassword").next().html("* 请输入7-15位密码(数字、字母、下划线)");
+            } else if (ruserPassword != userPassword) {
+                $("#userPassword").next().html("");
+                $("#ruserPassword").focus();
+                $("#ruserPassword").next().html("* 两次密码不一致");
+            } else if (birthday == "") {
+                $("#ruserPassword").next().html("");
+                $("#birthday").focus();
+                $("#birthday").next().html("* 请选择出生日期");
+            } else if (phone == "" || (/^(((13[0-9])|(15[0-9])|(18[0-9]))+[0-9]{8})$/.test(phone) == false)) {
+                $("#birthday").next().html("");
+                $("#phone").focus();
+                $("#phone").next().html("电话格式不正确！");
+            } else if (address == "" || (/^[\u4E00-\u9FA5,A-Za-z0-9]{10,50}$/.test(address) == false)) {
+                $("#phone").next().html("");
+                $("#address").focus();
+                $("#address").next().html("* 请输入10-50位的地址描述(汉字、数字、字母)");
+            } else {
+                $("#address").next().html("");
+                alert("添加成功！");
+                $("#userForm").submit();
+            }
+        });
+        $("#back").click(function () {
+            window.history.go(-1);
+        });
+    })
+</script>
+<input type="hidden" id="path" name="path" value="/SMBMS"/>
+<input type="hidden" id="referer" name="referer" value="http://localhost:8080jsp/user.do?method=query"/>
+
+<div class="right">
+    <div class="location">
+        <strong>你现在所在的位置是:</strong>
+        <span>用户管理页面 >> 用户添加页面</span>
+    </div>
+    <div class="providerAdd">
+        <form id="userForm" name="userForm" method="post" action="jsp/user.do">
+            <input type="hidden" name="method" value="add">
+            <!--div的class 为error是验证错误，ok是验证成功-->
+            <div>
+                <label for="userCode">用户编码：</label>
+                <input type="text" name="userCode" id="userCode" value="">
+                <!-- 放置提示信息 -->
+                <font color="red"></font>
+            </div>
+            <div>
+                <label for="userName">用户名称：</label>
+                <input type="text" name="userName" id="userName" value="">
+                <font color="red"></font>
+            </div>
+            <div>
+                <label for="userPassword">用户密码：</label>
+                <input type="password" name="userPassword" id="userPassword" value="">
+                <font color="red"></font>
+            </div>
+            <div>
+                <label for="ruserPassword">确认密码：</label>
+                <input type="password" name="ruserPassword" id="ruserPassword" value="">
+                <font color="red"></font>
+            </div>
+            <div>
+                <label>用户性别：</label>
+                <select name="gender" id="gender">
+                    <option value="1" selected="selected">男</option>
+                    <option value="2">女</option>
+                </select>
+            </div>
+            <div>
+                <label for="birthday">出生日期：</label>
+                <input type="text" Class="Wdate" id="birthday" name="birthday"
+                       readonly="readonly" onclick="WdatePicker();">
+                <font color="red"></font>
+            </div>
+            <div>
+                <label for="phone">用户电话：</label>
+                <input type="text" name="phone" id="phone" value="">
+                <font color="red"></font>
+            </div>
+            <div>
+                <label for="address">用户地址：</label>
+                <input name="address" id="address" value="">
+            </div>
+            <div>
+                <label>用户角色：</label>
+                <!-- 列出所有的角色分类 -->
+                <select name="userRole" id="userRole"></select>
+                <font color="red"></font>
+            </div>
+            <div class="providerAddBtn">
+                <input type="button" name="add" id="add" value="保存">
+                <input type="button" id="back" name="back" value="返回">
+            </div>
+        </form>
+    </div>
+</div>
+</section>
+<div th:replace="common/bottom::html"></div>
+</body>
+</html>
+

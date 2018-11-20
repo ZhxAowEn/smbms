@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<div th:replace="common/header::html"></div>
+<script type="text/javascript">
+    $(function () {
+        $("#save").click(function () {
+            var userId = $("#userId").val();
+            var userPassword = $("#userPassword").val();
+            var oldPassword = $("#oldpassword").val();
+            var newpassword = $("#newpassword").val();
+            var rnewpassword = $("#rnewpassword").val();
+            alert(userId);
+            alert(userPassword);
+            alert(oldPassword);
+            alert(newpassword);
+            alert(rnewpassword);
+            if (oldPassword == "") {
+                $("#oldpassword").next().html("旧密码不能为空！");
+                $("#oldpassword").focus();
+            } else {
+                $("#oldpassword").next().html("");
+                if (oldPassword != userPassword) {
+                    $("#oldpassword").next().html("旧密码不正确！");
+                    $("#oldpassword").focus();
+                } else {
+                    $("#oldpassword").next().html("");
+                    if (newpassword == "") {
+                        $("#newpassword").next().html("新密码不能为空！");
+                        $("#newpassword").focus();
+                    } else {
+                        $("#newpassword").next().html("");
+                        if (newpassword != rnewpassword) {
+                            $("#rnewpassword").next().html("两次密码必须一致！");
+                            $("#rnewpassword").focus();
+                        } else {
+                            $("#rnewpassword").next().html("");
+                            $("#userForm").submit();
+                            $.ajax({
+                                type: "post", //请求方式GET  POST
+                                url: "/user/getUpdatePwd",//要请求的地址
+                                data: {
+                                    "newpassword": newpassword,
+                                    "userId": userId
+                                }
+                            });
+                        }
+                    }
+                }
+            }
+        });
+    });
+</script>
+<input type="hidden" id="path" name="path" value="/SMBMS"/>
+<input type="hidden" id="referer" name="referer" value="http://localhost:8080jsp/user.do?method=query"/>
+<div class="right">
+    <div class="location">
+        <strong>你现在所在的位置是:</strong>
+        <span>密码修改页面</span>
+    </div>
+    <div class="providerAdd">
+        <form id="userForm" name="userForm" method="post" action="/user/getUpdatePwd">
+            <input type="hidden" name="userId" id="userId" th:value="${session.SESSION_USER.id}">
+            <input type="hidden" name="userPassword" id="userPassword" th:value="${session.SESSION_USER.userpassword}">
+            <!--div的class 为error是验证错误，ok是验证成功-->
+            <div class="info"></div>
+            <div class="">
+                <label for="oldPassword">旧密码：</label>
+                <input type="password" name="oldpassword" id="oldpassword" value="">
+                <font color="red"></font>
+            </div>
+            <div>
+                <label for="newPassword">新密码：</label>
+                <input type="password" name="newpassword" id="newpassword" value="">
+                <font color="red"></font>
+            </div>
+            <div>
+                <label for="rnNewPassword">确认新密码：</label>
+                <input type="password" name="rnewpassword" id="rnewpassword" value="">
+                <font color="red"></font>
+            </div>
+            <div class="providerAddBtn">
+                <!--<a href="#">保存</a>-->
+                <input type="button" name="save" id="save" value="保存" class="input-button">
+            </div>
+        </form>
+    </div>
+</div>
+</section>
+<div th:replace="common/bottom::html"></div>
+</body>
+</html>

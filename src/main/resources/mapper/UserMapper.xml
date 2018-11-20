@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zhxw.smbms.dao.UserMapper">
+
+    <select id="getLoginUser" resultType="smbms_user">
+
+        SELECT * FROM smbms_user
+        <trim prefix="where" prefixOverrides="and | or">
+            <if test="userCode!=''and userCode != null">
+                and userCode = #{userCode}
+            </if>
+        </trim>
+    </select>
+
+    <select id="getUserList" resultType="smbms_user">
+        select *,TIMESTAMPDIFF(YEAR,`birthday`,NOW()) AS age from smbms_user where 1=1
+        <if test="userName!=''and userName != null">
+            and userName like CONCAT ('%',#{userName},'%')
+        </if>
+        <if test="userRole>0">
+            and userRole = #{userRole}
+        </if>
+        LIMIT #{currPageNo},#{pageSize}
+    </select>
+    <!--查询用户总数  -->
+    <select id="getUserCount" resultType="int">
+        select count(1) from smbms_user
+        <where>
+            <if test="userName!=''and userName!=null">and userName LIKE CONCAT('%',#{userName},'%')</if>
+            <if test="userRole>0">and userRole=#{userRole}</if>
+        </where>
+    </select>
+
+    <!--查看用户  -->
+    <select id="getUserById" resultType="smbms_user">
+	select * from `smbms_user` where id=#{id}
+	</select>
+
+    <!--修改用户  -->
+    <update id="userUpdate" parameterType="smbms_user">
+        update smbms_user
+        <trim prefix="set" suffixOverrides="," suffix="where id = #{id}">
+            <if test="userName != null">userName=#{userName},</if>
+            <if test="gender > 0">gender=#{gender},</if>
+            <if test="birthday != null">birthday=#{birthday},</if>
+            <if test="phone != null">phone=#{phone},</if>
+            <if test="address != null">address=#{address},</if>
+            <if test="userRole > 0">userRole=#{userRole}</if>
+        </trim>
+    </update>
+
+
+    <!--修改密码-->
+    <update id="updatePwd">
+        update smbms_user set userPassword = #{userPassword} where id=#{id}
+    </update>
+
+</mapper>
